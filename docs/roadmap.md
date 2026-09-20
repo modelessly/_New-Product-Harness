@@ -2,21 +2,9 @@
 
 Use this roadmap to group product ambition without expanding the current build scope. Keep V1 narrow and move ideas forward only after the earlier phase has been validated.
 
-## V1: Core Promise
+## Current Version
 
-Goal:
-`[The smallest complete version that proves the product should exist.]`
-
-Capabilities:
-
-- `[capability]`
-- `[capability]`
-- `[capability]`
-
-Validation:
-
-- `[How we know V1 works]`
-- `[How we know V1 works]`
+Committed V1 scope and success criteria live only in `PRODUCT.md`. This optional roadmap contains possibilities, not implementation authorization. Move a future idea into `PRODUCT.md` and create accepted tasks before building it.
 
 ## V2: Depth
 

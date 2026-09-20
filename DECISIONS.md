@@ -55,3 +55,23 @@ Some products will need to add infrastructure earlier, but that decision should 
 
 Status:
 Accepted
+
+---
+
+## 2026-09-20: Use A Small Portable Workflow With Explicit Product Choices
+
+Decision:
+Keep `AGENTS.md` as the canonical workflow with small Claude and Gemini adapters and an explicit startup prompt for other clients. Remove the redundant `CODEX.md` entry point. Route context by task instead of requiring every document on every change.
+
+Keep V1 scope and success criteria in `PRODUCT.md`, removing the duplicated scope document. Make the roadmap optional. Ask for the UI foundation at kickoff, including Modeless, shadcn/ui, native controls, custom/other, recommendation, or not applicable; there is no default system.
+
+Add a reproducible command contract, observable task acceptance criteria, evidence-based handoffs, an optional concurrent-agent protocol, product-assumption experiments, and stage-appropriate release checks.
+
+Reasoning:
+Reduce conflicting instructions and context overhead while making completion and transfer between coding clients verifiable. Preserve the harness's narrow product focus without requiring a specific model, plugin, or orchestration tool.
+
+Tradeoffs:
+Selective reading requires clear routing and current authoritative documents. Optional coordination and release fields require product-specific setup; they should not become paperwork for trivial tasks. Cross-client behavior must be trialed in the actual clients rather than assumed from filenames.
+
+Status:
+Accepted

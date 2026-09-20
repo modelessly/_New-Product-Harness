@@ -12,7 +12,8 @@ Use this file to make the initial implementation choices explicit. Keep it curre
 
 ## Core Technologies
 
-- UI: `[framework]`
+- UI framework: `[framework or none]`
+- UI foundation: See `docs/design.md` for the selected system and source; record compatibility constraints here.
 - Language: `[language]`
 - Persistence: `[storage approach]`
 - Networking: `[none / API / local network / other]`
@@ -20,6 +21,15 @@ Use this file to make the initial implementation choices explicit. Keep it curre
 - Testing: `[test approach]`
 
 Prefer the simplest reliable option that supports the V1 product promise.
+
+## Reproducible Development
+
+- Runtime / SDK version: `[version]`
+- Package manager / version: `[tool or N/A]`
+- Dependency lockfile: `[path or N/A]`
+- Configuration prerequisites: `[reference .env.example or platform setup; no secrets]`
+
+Keep exact setup, run, build, and verification commands in `README.md`, not duplicated here. Establish a runnable smoke check with the first scaffold. Add CI when there is meaningful behavior to verify.
 
 ## Architectural Goals
 

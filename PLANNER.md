@@ -1,31 +1,31 @@
-# PLANNER.md
+# Active Work And Handoff
 
-Canonical active work tracker for humans and coding agents.
-
-Update this file when work is picked up, completed, blocked, or newly discovered. Keep `TASKS.md` as the broader backlog and use this file for current execution state.
+Use this for current execution state. `TASKS.md` owns the backlog and acceptance criteria. Replace this template when a product task begins; do not accumulate transcripts.
 
 ## Current Focus
 
-`[Describe the active milestone or task.]`
+- Task ID / milestone: `[task]`
+- Status: `[not started / in progress / blocked / verification incomplete / done]`
+- Next action: `[specific action]`
+- Blockers or unresolved decisions: `[none / details]`
 
-## Now
+## Handoff
 
-- `[Task currently in progress]`
+- Branch / worktree: `[location]`
+- Revision checked: `[commit; uncommitted changes listed separately]`
+- Changes and relevant files: `[summary]`
+- Checks and outcomes: `[exact commands, working directory, results]`
+- Manual / visual evidence: `[observations or artifact paths]`
+- Remaining acceptance criteria: `[reference task ID and gaps]`
+- Unavailable or failed checks: `[none / details]`
+- Known risks / assumptions: `[none / details]`
 
-## Next
+## Optional Concurrent Work
 
-- `[Next task]`
-- `[Next task]`
-- `[Next task]`
+Use only for parallel editing. One integration owner maintains this file and `TASKS.md`.
 
-## Blocked
+- Integration owner: `[owner]`
 
-- `[Blocked task]`: `[What is needed to unblock it]`
-
-## Done
-
-- `[Completed task]`: `[Date or short note]`
-
-## Handoff Notes
-
-- `[Context future agents should know before continuing]`
+| Task | Owner | Branch / worktree | Owned files / boundaries | Dependencies | Status |
+| --- | --- | --- | --- | --- | --- |
+| `[ID]` | `[owner]` | `[location]` | `[scope]` | `[none / IDs]` | `[status]` |

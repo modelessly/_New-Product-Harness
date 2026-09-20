@@ -32,6 +32,17 @@ Replace the placeholders in this file when starting a new product. This should b
 
 `[State the bet. Example: If we make X dramatically simpler, then Y user will choose this product over Z alternative.]`
 
+## Evidence And Riskiest Assumption
+
+- Evidence for the problem: `[observations, interviews, existing behavior; distinguish evidence from assumptions]`
+- Current alternative: `[how the user handles this today]`
+- Riskiest assumption: `[what must be true for this product to be useful]`
+- Smallest experiment: `[prototype session, observed workflow, or other low-cost check]`
+- Decision threshold: `[result that supports continuing, changing direction, or stopping]`
+- Result and next decision: `[not tested / date, evidence, conclusion]`
+
+A working implementation proves behavior, not demand. Use lightweight research before adding measurement infrastructure.
+
 ## Emotional Goals
 
 The product should feel:

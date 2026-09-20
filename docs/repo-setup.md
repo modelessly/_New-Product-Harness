@@ -1,60 +1,34 @@
-# Repository Setup
+# Product Kickoff And Repository Setup
 
-Use this checklist when cloning the harness for a new product.
+Use this once when turning the harness into a product. The agent helps fill the documents; the user does not need to write a complete PRD first.
+
+## Kickoff Interview
+
+Read the supplied idea and existing documents first. Ask only unanswered questions, in small batches:
+
+1. Who is the user, what situation triggers the need, and what outcome matters most?
+2. What is the narrow V1 promise, and what is explicitly excluded?
+3. Which platform comes first? Are there existing code, stack, device, budget, deadline, privacy, or offline constraints?
+4. Which UI foundation should we use: **Modeless**, **shadcn/ui**, **native platform controls**, **another/custom system**, **recommend based on the product**, or **not applicable**?
+5. What evidence supports the problem, what is the riskiest assumption, and what small experiment could test it?
+
+Do not silently choose a UI foundation. If the user requests a recommendation, explain platform fit and tradeoffs and resolve the choice before substantial UI implementation. Record the authoritative source/version in `docs/design.md`; request a reference if Modeless or another system is unavailable rather than inventing its conventions. A component foundation does not replace visual direction.
+
+Only unresolved decisions that materially affect the next increment should block it. Label conservative assumptions and keep them reversible. Do not require every optional template field to be completed before starting.
 
 ## Clone To Product
 
-1. Clone or copy this folder.
-2. Rename the folder and repository to the product name.
-3. Initialize git if needed.
-4. Replace placeholder content in `PRODUCT.md`.
-5. Define the initial V1 boundary in `docs/v1-scope.md`.
-6. Choose the first platform and stack in `ARCHITECTURE.md`.
-7. Fill `TASKS.md` with the first implementation backlog.
-8. Set the active milestone in `PLANNER.md`.
-9. Keep or edit `MEMORY.md` for this product.
-10. Add the first durable setup decision to `DECISIONS.md`.
+1. Copy or clone the harness; rename the folder/repository.
+2. Inspect Git status and remotes. Point the new product at its own repository before any push; do not push product code into the harness remote.
+3. Populate `PRODUCT.md`, including V1 scope and the first validation experiment.
+4. Choose the platform/stack in `ARCHITECTURE.md` and UI direction in `docs/design.md`.
+5. Replace the command contract in `README.md` when scaffold commands are known. Record runtime/package-manager versions and configuration prerequisites.
+6. Put ordered tasks with acceptance criteria in `TASKS.md`; set the first active task in `PLANNER.md`.
+7. Review optional `MEMORY.md` preferences. Keep roadmap ideas optional.
+8. Record product-specific setup decisions in `DECISIONS.md`. Its harness-history entries describe the template, not product-specific choices.
+9. Replace template placeholders that affect current work and search for inherited product names, paths, URLs, and remotes. Future optional fields may remain explicitly unresolved.
+10. Follow `AGENTS.md` to implement and verify the first increment.
 
-## Product Naming Pass
+## Setup Files
 
-Search for template placeholders and replace them:
-
-- `[Product Name]`
-- `[must-have capability]`
-- `[not in V1]`
-- `[future task]`
-- `[tone]`
-- `[framework]`
-- `[language]`
-
-Then search for any old product name if this folder was copied from an existing project.
-
-## First Agent Session
-
-Recommended first instruction:
-
-```text
-Read all repository documentation files first. Summarize your understanding, identify remaining placeholders or missing decisions, propose a narrow implementation plan, name risks and tradeoffs, and then begin with the smallest useful increment.
-```
-
-## Before Writing Code
-
-Confirm:
-
-- `PRODUCT.md` has a real product promise.
-- `docs/v1-scope.md` has clear included and excluded scope.
-- `ARCHITECTURE.md` names a real platform and stack.
-- `TASKS.md` has ordered implementation work.
-- `PLANNER.md` names the current focus.
-- `DECISIONS.md` includes any important setup decisions.
-
-## Optional Setup Files
-
-Add these only when useful:
-
-- `.env.example` for documented local configuration.
-- `CONTRIBUTING.md` for team conventions.
-- `docs/release-checklist.md` when the product is near release.
-- CI configuration after there is something meaningful to verify.
-
-Avoid adding operational files just to make the repository look complete.
+Add `.env.example` only when configuration is needed; never include secrets. Add team conventions, scripts, or CI when they serve an actual workflow. Adapt `.gitignore` to the selected stack. Keep client adapters small and defer shared rules to `AGENTS.md`.

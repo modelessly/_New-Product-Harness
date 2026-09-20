@@ -2,12 +2,27 @@
 
 Implementation backlog.
 
-Keep this file focused on actionable work. Move completed or superseded context into `DECISIONS.md` or `PLANNER.md` when it becomes useful history.
+Keep this file focused on actionable work. Keep completed task status here; decision rationale belongs in `DECISIONS.md` and the current handoff belongs in `PLANNER.md`.
+
+## Task Format
+
+Before implementation, give each active task an ID and fill:
+
+- Outcome: `[observable user or developer result]`
+- Acceptance criteria: `[specific behavior, including important failure cases]`
+- Verification: `[command from README.md and/or reproducible manual steps]`
+- Dependencies: `[none / task IDs]`
+
+Example: `CORE-01 — Save an item`. Acceptance: create an item, restart, and confirm it remains; a storage failure shows a recoverable error. Verification: the product's persistence test plus the documented restart smoke check.
+
+The phases below are a starter backlog, not automatically accepted product scope. Remove inapplicable tasks and expand the current increment into the format above.
 
 ## Phase 0: Product Setup
 
 - [ ] Replace placeholders in `PRODUCT.md`
-- [ ] Define V1 scope in `docs/v1-scope.md`
+- [ ] Define V1 scope and success criteria in `PRODUCT.md`
+- [ ] Choose the UI foundation explicitly in `docs/design.md`
+- [ ] Define evidence, the riskiest assumption, and a small validation experiment
 - [ ] Choose initial platform and stack in `ARCHITECTURE.md`
 - [ ] Capture initial product risks
 - [ ] Create or connect the project repository
@@ -16,15 +31,16 @@ Keep this file focused on actionable work. Move completed or superseded context 
 
 - [ ] Create app or package scaffold
 - [ ] Establish minimal folder structure
-- [ ] Add basic build/run instructions
+- [ ] Populate and verify the command contract in `README.md`
 - [ ] Add formatting and linting, if appropriate
 - [ ] Add first smoke test or verification path
 - [ ] Implement app shell or entry point
+- [ ] Add CI once meaningful reproducible checks exist
 
 ## Phase 2: Core Workflow
 
 - [ ] Implement the smallest end-to-end user workflow
-- [ ] Persist the minimum useful user data
+- [ ] Persist the minimum useful user data, if required
 - [ ] Add empty, loading, and error states
 - [ ] Verify the workflow manually
 - [ ] Add focused tests around durable logic
@@ -36,6 +52,7 @@ Keep this file focused on actionable work. Move completed or superseded context 
 - [ ] Handle permissions and failure states
 - [ ] Improve accessibility basics
 - [ ] Validate performance for expected V1 usage
+- [ ] Run the product experiment and record evidence and the next decision in `PRODUCT.md`
 - [ ] Prepare release checklist
 
 ## Backlog

@@ -1,51 +1,51 @@
 # Reusable Prompts
 
-Copy or adapt these prompts when starting work with Codex, Claude Code, Cursor, or another coding agent.
+Use with any coding client. Explicitly supply file contents if the client cannot read the repository. `AGENTS.md` defines the workflow; these prompts select the task.
 
 ## Start A New Product
 
 ```text
-Read all repository documentation files before making changes. Then summarize your understanding of the product, identify missing PRD or architecture details, propose a narrow V1 implementation plan, name risks and tradeoffs, and begin with the smallest useful increment.
+Read AGENTS.md, PRODUCT.md, and PLANNER.md. Follow docs/repo-setup.md to interview me only about unanswered kickoff decisions, including the UI foundation (Modeless, shadcn/ui, native controls, another/custom system, recommendation, or not applicable). Help populate the authoritative documents, define the smallest useful increment and acceptance criteria, explain material risks, and begin once the necessary decisions are clear.
 ```
 
-## Turn A PRD Into Tasks
+## Turn A Brief Into Tasks
 
 ```text
-Read PRODUCT.md, docs/v1-scope.md, ARCHITECTURE.md, and the existing TASKS.md. Refactor TASKS.md into a practical implementation backlog for V1. Keep tasks small, ordered, and verifiable. Do not add features that are outside the stated V1 scope.
+Follow AGENTS.md. Read PRODUCT.md, ARCHITECTURE.md, and TASKS.md. Organize the V1 backlog into small ordered tasks with observable acceptance criteria and verification steps. Keep future ideas out of committed scope.
 ```
 
-## Review Architecture Before Coding
+## Review Architecture
 
 ```text
-Read all repository docs and review ARCHITECTURE.md against the product brief. Identify overengineering, missing reliability concerns, unclear state ownership, risky dependencies, and places where the architecture does not support the V1 user promise. Propose focused edits before implementing anything.
+Follow AGENTS.md. Review ARCHITECTURE.md against PRODUCT.md and relevant source. Identify overengineering, unclear state ownership, reliability gaps, and risky dependencies. Recommend focused changes with tradeoffs; do not implement during this review.
 ```
 
-## Create The First Vertical Slice
+## First Vertical Slice
 
 ```text
-Read all repository docs. Identify the smallest end-to-end workflow that proves the V1 promise. Implement only that vertical slice, including minimal UI or interface, minimal persistence if needed, and the lightest useful verification. Update TASKS.md, PLANNER.md, and DECISIONS.md if the work creates durable context.
+Follow AGENTS.md. Implement the smallest end-to-end workflow supporting PRODUCT.md's V1 promise. Use the chosen UI foundation in docs/design.md, minimal persistence only if needed, and the command contract in README.md. Verify acceptance criteria and leave evidence and handoff context.
 ```
 
 ## Continue Existing Work
 
 ```text
-Read README.md, AGENTS.md, MEMORY.md, PRODUCT.md, ARCHITECTURE.md, TASKS.md, PLANNER.md, DECISIONS.md, and the relevant docs folder files. Summarize current state, identify the next unfinished task, and continue incrementally. Preserve existing user changes.
+Follow AGENTS.md. Inspect PLANNER.md and Git state, read context relevant to the active task, verify the handoff's assumptions, and continue the next unfinished increment. Preserve existing edits and report verification evidence.
 ```
 
-## Product Scope Review
+## Product And Design Review
 
 ```text
-Review PRODUCT.md, docs/v1-scope.md, and docs/roadmap.md. Identify anything that feels too broad for V1, anything important that is missing, and any future idea that should move to the parking lot. Keep the recommendation focused on shipping a useful first version.
+Follow AGENTS.md. Review PRODUCT.md and docs/design.md for a clear user promise, narrow scope, supported assumptions, coherent UI foundation, and accessible interactions. If screens exist, inspect them. Recommend focused improvements and a small experiment to test the riskiest assumption.
 ```
 
-## Design Direction Review
+## Review A Change
 
 ```text
-Review PRODUCT.md and docs/design.md. Clarify the intended emotional tone, interaction posture, and visual direction. Identify UI patterns to avoid. If the app has existing screens, suggest focused changes that better support the product promise without adding clutter.
+Follow AGENTS.md. Review the actual diff against task acceptance criteria. Look for correctness, regressions, data handling, accessibility, and missing verification. Report actionable findings with file locations and evidence; distinguish unverified concerns. Do not edit during the review.
 ```
 
 ## Handoff
 
 ```text
-Prepare a concise handoff. Include what changed, what was verified, what remains, known risks, and the next recommended task. Update PLANNER.md with the same handoff context and update DECISIONS.md for any durable product or architecture decisions.
+Use docs/agent-onboarding.md to update PLANNER.md with current revision, uncommitted changes, verification evidence, unresolved criteria, and the exact next action. Update authoritative product or technical documents only when their facts changed.
 ```

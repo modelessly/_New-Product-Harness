@@ -1,50 +1,56 @@
 # New Product Harness
 
-An agent-ready starter folder for turning a product idea into a focused, buildable project.
+A lightweight, model-agnostic starter for turning a product idea into a focused, buildable project. Keep the core promise narrow, build incrementally, and verify observable behavior.
 
-This repository is intentionally lightweight. Clone it, rename it, add the product-specific PRD, and connect it to a coding agent such as Codex or Claude Code. The documentation gives the agent enough context to work quickly while preserving your preferred collaboration style: simple, incremental, reliable, and scope-aware.
+## Start A Product
 
-## How To Use This Template
-
-1. Rename the folder and repository to the new product name.
-2. Replace placeholder text in `PRODUCT.md` with the actual PRD or product brief.
-3. Choose the initial technical direction in `ARCHITECTURE.md`.
-4. Fill the first milestones in `TASKS.md` and `PLANNER.md`.
-5. Review `MEMORY.md` and keep or edit the durable working preferences.
-6. Follow `docs/repo-setup.md` for the clone-to-product checklist.
-7. Start the coding agent and ask it to read all repository docs before making changes.
-8. Record meaningful product and architecture decisions in `DECISIONS.md`.
-
-## Documentation Map
-
-- `AGENTS.md`: canonical instructions for AI coding agents.
-- `CLAUDE.md`: Claude-specific entry point that defers to the canonical agent workflow.
-- `MEMORY.md`: durable cross-product preferences for future agent sessions.
-- `PRODUCT.md`: product brief and PRD template.
-- `ARCHITECTURE.md`: technical direction and architecture decision template.
-- `TASKS.md`: implementation backlog.
-- `PLANNER.md`: active planning board and handoff notes.
-- `DECISIONS.md`: append-only decision log.
-- `docs/agent-onboarding.md`: first-session checklist for coding agents.
-- `docs/design.md`: design principles and UX direction.
-- `docs/prompts.md`: reusable startup, planning, review, and handoff prompts.
-- `docs/release-checklist.md`: lightweight checklist before shipping or sharing.
-- `docs/repo-setup.md`: clone-to-product setup checklist.
-- `docs/v1-scope.md`: first-version scope boundaries.
-- `docs/roadmap.md`: phased product roadmap.
-
-## Template Principles
-
-- Prefer simple, working product behavior over speculative systems.
-- Build incrementally and verify each meaningful change.
-- Keep the first version narrow enough to finish.
-- Avoid backend, auth, cloud services, AI features, social features, and new dependencies unless the PRD explicitly requires them.
-- Preserve emotional clarity: the product should have a clear user, clear job, and clear reason to exist.
-
-## Suggested First Prompt
+1. Copy or clone the harness and follow `docs/repo-setup.md`, including checking the Git remote before pushing.
+2. Give the agent your idea and the startup prompt below. It should ask only unanswered kickoff questions and help populate the documents.
+3. Choose the platform and UI foundation explicitly. No design system is selected by default.
+4. Build the smallest useful end-to-end workflow and validate the riskiest product assumption.
 
 ```text
-Read all repository documentation files first. Summarize your understanding of the product, propose a narrow implementation plan, identify risks and tradeoffs, and then begin with the smallest useful increment.
+Read AGENTS.md, PRODUCT.md, and PLANNER.md. Follow docs/repo-setup.md for a new product. Ask only unanswered kickoff questions, including the UI foundation: Modeless, shadcn/ui, native platform controls, another/custom system, a recommendation, or not applicable. Help fill the product and architecture decisions, define observable acceptance criteria, summarize the approach and material risks, then implement the smallest useful increment once the necessary decisions are clear. Follow the verification and handoff rules in AGENTS.md.
 ```
 
-For more reusable prompts, see `docs/prompts.md`.
+## Agent Compatibility
+
+The coding client determines file discovery and available tools, not the model name. Codex uses `AGENTS.md`; `CLAUDE.md` and `GEMINI.md` point their clients to the same workflow. For any other client, including one using Grok or a local model, explicitly provide the startup prompt and ensure it can read these files. If it cannot access the repository, supply the relevant file contents and review/apply its proposed changes yourself.
+
+The portable baseline uses Markdown and shell commands. Network access, plugins, browsers, and multiple agents are optional. Check the client's active instructions when available and verify behavior rather than assuming an adapter was loaded.
+
+## Documentation Map And Ownership
+
+| File | Authoritative information | Read when |
+| --- | --- | --- |
+| `AGENTS.md` | Agent workflow, constraints, definition of done | Every task |
+| `PRODUCT.md` | Product intent, V1 scope, success criteria, evidence | Every task |
+| `PLANNER.md` | Active work and handoff | Every task |
+| `ARCHITECTURE.md` | Platform, stack, state and integration decisions | Technical work |
+| `docs/design.md` | UI foundation and visual/interaction direction | UI work |
+| `TASKS.md` | Ordered backlog and task acceptance criteria | Planning or selecting work |
+| `DECISIONS.md` | Decision rationale and supersession history | Relevant decisions |
+| `MEMORY.md` | Optional distinct collaboration preferences | When present/relevant |
+| `docs/repo-setup.md` | Kickoff and clone-to-product checklist | New product |
+| `docs/agent-onboarding.md` | Resume and optional concurrent-agent protocol | Onboarding/handoff |
+| `docs/prompts.md` | Copyable task prompts | As needed |
+| `docs/release-checklist.md` | Stage-appropriate release checks | Sharing or releasing |
+| `docs/roadmap.md` | Optional future possibilities, not committed scope | Future planning |
+
+Change facts in their authoritative home; link to them elsewhere instead of duplicating them. Accepted decisions explain rationale; keep current product/architecture documents consistent when a decision changes.
+
+## Command Contract
+
+For this documentation-only harness, review Markdown links, obsolete references, and `git diff --check`. There is no application build or test suite yet. When starting a product, replace the rows below with exact commands, working directories, and prerequisites; use `N/A` with a reason for inapplicable checks. Never leave guessed commands presented as working instructions.
+
+| Purpose | Exact command | Directory / prerequisites |
+| --- | --- | --- |
+| Setup / install | `[fill when stack is chosen]` | `[runtime version, package manager, lockfile]` |
+| Run locally | `[fill]` | `[configuration; use .env.example without secrets]` |
+| Build | `[fill or N/A with reason]` | `[fill]` |
+| Lint / format check | `[fill or N/A with reason]` | `[fill]` |
+| Type check | `[fill or N/A with reason]` | `[fill]` |
+| Focused tests | `[fill]` | `[how to select a task's tests]` |
+| Full tests / smoke check | `[fill]` | `[expected pass signal]` |
+
+Document a short manual core-workflow check when automation is insufficient. Add reproducible scripts and CI once meaningful checks exist; avoid tool-specific verification as the only path.
