@@ -75,3 +75,25 @@ Selective reading requires clear routing and current authoritative documents. Op
 
 Status:
 Accepted
+
+---
+
+## 2026-09-23: Start From A PRD And Keep Product Decisions Separate
+
+Decision:
+Kickoff expects a full PRD. Map it into the authoritative documents and ask only unanswered decisions, including the UI foundation, without naming a default design system. Do not implement until blocking product fields, platform, and UI foundation are filled.
+
+On clone, remove harness-history entries from `DECISIONS.md`. Standing constraints stay in `AGENTS.md`. Record the harness revision once, then log product decisions only.
+
+Keep one startup prompt, in `docs/prompts.md`. Emotional goals stay in `PRODUCT.md`. Later ideas stay in `docs/roadmap.md`.
+
+This supersedes the named UI-system menu in the 2026-09-20 entry. The rest of that entry stands.
+
+Reasoning:
+The harness is copied when a PRD already exists, and UI systems vary by product. A decision log that still says this repository is a product harness steers product agents at the template. Duplicated prompts, feelings, and future lists drift.
+
+Tradeoffs:
+Clone setup has to reset the decision log; leaving the old entries in place keeps the template history inside the product. Agents need the PRD in context. This harness repository keeps the full history because those entries are about the template.
+
+Status:
+Accepted

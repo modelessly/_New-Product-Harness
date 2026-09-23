@@ -6,6 +6,8 @@ Use this file to make the initial implementation choices explicit. Keep it curre
 
 ## Platform
 
+Blocking before implementation.
+
 - Primary platform: `[iOS / macOS / web / desktop / CLI / other]`
 - Secondary platforms, if any: `[none / list]`
 - Minimum supported version or runtime: `[version]`
