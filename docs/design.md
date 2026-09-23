@@ -4,7 +4,7 @@ Use this file to define the product's interaction and visual direction. Replace 
 
 ## UI Foundation — Choose At Kickoff
 
-No system is selected by default. Ask which foundation to use: **Modeless**, **shadcn/ui**, **native platform controls**, **another/custom system**, **recommend based on the product**, or **not applicable**.
+No system is selected by default. Ask which UI foundation or component library to use: a named system, native platform controls, a recommendation, or not applicable.
 
 - Selected foundation: `[unresolved / selection]`
 - Authoritative documentation or local reference: `[URL or path; required before using an unfamiliar system]`
@@ -12,23 +12,19 @@ No system is selected by default. Ask which foundation to use: **Modeless**, **s
 - Why it fits the platform and core workflow: `[reason]`
 - Constraints or intentional deviations: `[details or none]`
 
-Resolve the selection before substantial UI work. If asked to recommend, explain the fit and tradeoffs before resolving the choice. Do not invent Modeless conventions when its source is unavailable. Record technical implications in `ARCHITECTURE.md` and durable rationale in `DECISIONS.md`.
+Resolve the selection before substantial UI work. This choice is blocking for a product with a GUI. If asked to recommend, explain the fit and tradeoffs before resolving the choice. If the chosen system's source is unavailable, ask for a reference rather than inventing its conventions. Record technical implications in `ARCHITECTURE.md` and durable rationale in `DECISIONS.md`.
 
-The UI foundation supplies primitives and conventions; define the product's visual identity and interaction direction below. For products without a GUI, mark visual sections not applicable.
+The UI foundation supplies primitives and conventions; define the product's visual identity and interaction direction below. For products without a GUI, mark the foundation and the visual sections not applicable.
 
 ## Emotional Tone
 
-The product should feel:
+Emotional goals are authoritative in `PRODUCT.md`. Use the fields below to say how those feelings show up in interaction and visuals. If a feeling needs to change, change it in `PRODUCT.md`.
 
-- `[tone]`
-- `[tone]`
-- `[tone]`
+How the emotional goals show up:
 
-The product should avoid feeling:
-
-- `[anti-tone]`
-- `[anti-tone]`
-- `[anti-tone]`
+- `[interface behavior or visual choice]`
+- `[interface behavior or visual choice]`
+- `[interface behavior or visual choice]`
 
 ## Interaction Philosophy
 
@@ -98,4 +94,4 @@ At minimum, support:
 
 ## UI Verification
 
-For meaningful UI changes, inspect the actual rendered core workflow at relevant viewport or device sizes. Check keyboard/focus behavior, readable contrast, labels, reduced motion where relevant, and empty/loading/error states. Record observations or screenshot paths in the task handoff. If visual tools are unavailable, state that limitation and provide exact manual checks; do not claim visual verification.
+For meaningful UI changes, exercise the actual core workflow at relevant viewport or device sizes, including empty, loading, and error states. Check keyboard/focus behavior, readable contrast, labels, and reduced motion where relevant. A single screenshot is not verification. Record what you exercised and what you observed, including screenshot paths when they support that record. If visual tools are unavailable, state that limitation and provide exact manual checks; do not claim visual verification.

@@ -5,7 +5,7 @@ Use with any coding client. Explicitly supply file contents if the client cannot
 ## Start A New Product
 
 ```text
-Read AGENTS.md, PRODUCT.md, and PLANNER.md. Follow docs/repo-setup.md to interview me only about unanswered kickoff decisions, including the UI foundation (Modeless, shadcn/ui, native controls, another/custom system, recommendation, or not applicable). Help populate the authoritative documents, define the smallest useful increment and acceptance criteria, explain material risks, and begin once the necessary decisions are clear.
+Read AGENTS.md, PRODUCT.md, and PLANNER.md. I am starting a product from a full PRD. Follow docs/repo-setup.md: map the PRD into the authoritative documents, and ask only about decisions the PRD leaves open, including which UI foundation or component library to use (a named system, native platform controls, a recommendation, or not applicable). Do not implement until the blocking product fields, platform, and UI foundation are filled. Then define the smallest useful increment and acceptance criteria, explain material risks, and begin.
 ```
 
 ## Turn A Brief Into Tasks
