@@ -4,7 +4,7 @@
 
 1. Follow the reading routes in `AGENTS.md`.
 2. Inspect Git status, the current branch/revision, and existing edits before changing files.
-3. For a new product, follow `docs/repo-setup.md`; otherwise locate the active task in `PLANNER.md` and its acceptance criteria in `TASKS.md`.
+3. If `PRODUCT.md` still contains unfilled placeholders such as `[Product Name]`, this checkout is the starter harness. Improve the harness, or follow `docs/repo-setup.md` with a PRD. Otherwise locate the active task in `PLANNER.md` and its acceptance criteria in `TASKS.md`.
 4. Check relevant accepted decisions and actual source behavior. Treat stale handoff claims as leads to verify.
 5. Summarize the next increment and material risks, then proceed within the authorized scope.
 

@@ -1,6 +1,6 @@
 # Roadmap
 
-Use this roadmap to group product ambition without expanding the current build scope. Keep V1 narrow and move ideas forward only after the earlier phase has been validated.
+Use this roadmap to group product ambition without expanding the current build scope. This is the only home for later ideas. Keep V1 narrow and move ideas forward only after the earlier phase has been validated.
 
 ## Current Version
 

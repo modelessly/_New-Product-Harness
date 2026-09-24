@@ -1,21 +1,19 @@
 # New Product Harness
 
-A lightweight, model-agnostic starter for turning a product idea into a focused, buildable project. Keep the core promise narrow, build incrementally, and verify observable behavior.
+A lightweight, model-agnostic starter for turning a PRD into a focused, buildable project. Keep the core promise narrow, build incrementally, and verify observable behavior.
+
+Harness revision: `2026-09-23`
 
 ## Start A Product
 
 1. Copy or clone the harness and follow `docs/repo-setup.md`, including checking the Git remote before pushing.
-2. Give the agent your idea and the startup prompt below. It should ask only unanswered kickoff questions and help populate the documents.
+2. Give the agent your PRD and the startup prompt in `docs/prompts.md`. The agent maps the PRD into the documents, asks only unanswered questions, and does not implement until the blocking fields are filled.
 3. Choose the platform and UI foundation explicitly. No design system is selected by default.
 4. Build the smallest useful end-to-end workflow and validate the riskiest product assumption.
 
-```text
-Read AGENTS.md, PRODUCT.md, and PLANNER.md. Follow docs/repo-setup.md for a new product. Ask only unanswered kickoff questions, including the UI foundation: Modeless, shadcn/ui, native platform controls, another/custom system, a recommendation, or not applicable. Help fill the product and architecture decisions, define observable acceptance criteria, summarize the approach and material risks, then implement the smallest useful increment once the necessary decisions are clear. Follow the verification and handoff rules in AGENTS.md.
-```
-
 ## Agent Compatibility
 
-The coding client determines file discovery and available tools, not the model name. Codex uses `AGENTS.md`; `CLAUDE.md` and `GEMINI.md` point their clients to the same workflow. For any other client, including one using Grok or a local model, explicitly provide the startup prompt and ensure it can read these files. If it cannot access the repository, supply the relevant file contents and review/apply its proposed changes yourself.
+The coding client determines file discovery and available tools, not the model name. Codex uses `AGENTS.md`; `CLAUDE.md` and `GEMINI.md` point their clients to the same workflow. For any other client, including one using Grok or a local model, explicitly provide the startup prompt in `docs/prompts.md` and ensure it can read these files. If it cannot access the repository, supply the relevant file contents and review/apply its proposed changes yourself.
 
 The portable baseline uses Markdown and shell commands. Network access, plugins, browsers, and multiple agents are optional. Check the client's active instructions when available and verify behavior rather than assuming an adapter was loaded.
 
@@ -29,13 +27,14 @@ The portable baseline uses Markdown and shell commands. Network access, plugins,
 | `ARCHITECTURE.md` | Platform, stack, state and integration decisions | Technical work |
 | `docs/design.md` | UI foundation and visual/interaction direction | UI work |
 | `TASKS.md` | Ordered backlog and task acceptance criteria | Planning or selecting work |
-| `DECISIONS.md` | Decision rationale and supersession history | Relevant decisions |
+| `DECISIONS.md` | Product decision rationale and supersession history | Relevant decisions |
 | `MEMORY.md` | Optional distinct collaboration preferences | When present/relevant |
-| `docs/repo-setup.md` | Kickoff and clone-to-product checklist | New product |
+| `docs/repo-setup.md` | PRD mapping and clone-to-product checklist | New product |
 | `docs/agent-onboarding.md` | Resume and optional concurrent-agent protocol | Onboarding/handoff |
-| `docs/prompts.md` | Copyable task prompts | As needed |
+| `docs/prompts.md` | Copyable task prompts, including the startup prompt | As needed |
 | `docs/release-checklist.md` | Stage-appropriate release checks | Sharing or releasing |
 | `docs/roadmap.md` | Optional future possibilities, not committed scope | Future planning |
+| `docs/examples/filled-task.md` | Sample task density; delete after the first real task | Kickoff |
 
 Change facts in their authoritative home; link to them elsewhere instead of duplicating them. Accepted decisions explain rationale; keep current product/architecture documents consistent when a decision changes.
 
